@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clear.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <div class="homeImageContainer">
+                    <a href="" class="homeImage"></a>
+                </div>
+                <ul class="menuButtonsContainer">
+                    <li><a href="" class="menuButtons"><div> COMPRAR </div></a></li>
+                    <li><a href="" class="menuButtons"><div> ALUGAR </div></a></li>
+                    <li><a href="" class="menuButtons"><div> IMÓVEIS NOVOS </div></a></li>
+                    <li><a href="" class="menuButtons"><div> DESCOBRIR </div></a></li>
+                    <li><a href="" class="menuButtons"><div> FINANCIAMENTO </div></a></li>
+                </ul>
+            </div>
+            <div class="loginMenuContainer">
+                <ul class="menuButtonsContainer">
+                    <li><a href="" class="menuButtons"><div> ANUNCIAR IMÓVEIS </div></a></li>
+                    <li><a href="" class="menuButtons"><div> ENTRAR </div></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="sitePathContainer">
+            <div class="sitePath">
+                <a> Viva Real</a> <span class="point"></span> <a href=""> Venda </a>
+                <!-- ====================== /\ ISSO AQUI ALTERA COM JS /\ =========================== -->
+            </div>
+        </div>
+        <div class="sitePathContainer">
+            <div class="mainGridContainer">
+                <div class="esquerda">
+                    <div class="findBlockContainer">
+                        <div class="findBlock">
+                            <label class="formLabel"for="locationSearch">LOCALIZAÇÃO DO IMÓVEL</label>
+                            <input type="text" placeholder="Digite uma rua, bairro ou cidade" id="locationSearch">
+                        </div>
+                        <div class="virtualTourContainer">
+                            <p class="formLabel">IMÓVEL COM</p>
+                            <div class="sliderSwitchContainer">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>Tour Virtual ou Vídeos</p>
+                            </div>
+                        </div>
+                        <div class="tipoImovelContainer">
+                            <label class="formLabel" for="typeSelection">TIPO DE IMÓVEL</label>
+                            <select type="text" placeholder="Digite uma rua, bairro ou cidade" id="typeSelection">
+                                <option value="" disabled selected>Mostrar todos</option>
+                            </select>
+                        </div>
+                        <div class="faixaPreco">
+                            <div>
+                                <label class="formLabel" for="precomin">PREÇO MÍNIMO</label>
+                                <input type="number" placeholder="" id="precomin" class="inputDefault">
+                                <label for="precomin" class="currencyType">R$</label>
+                            </div>
+                            <div>
+                                <label class="formLabel" for="precomax">PREÇO MÁXIMO</label>
+                                <input type="number" placeholder="ilimitado" id="precomax" class="inputDefault" step="0.01">
+                                <label for="precomax" class="currencyType">R$</label>
+                            </div>
+                        </div>
+                        <div class="numeroQuartos">
+                            <div class="formLabel">
+                                NÚMERO DE QUARTOS
+                            </div>
+                            <div class="roundButtonsContainer">
+                                <button type="button" class="roundButton">1+</button>
+                                <button type="button" class="roundButton">2+</button>
+                                <button type="button" class="roundButton">3+</button>
+                                <button type="button" class="roundButton">4+</button>
+                                <button type="button" class="roundButton">5+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="direita">
+                    <div class="menuTabsOutContainer">
+                    <ul class="menuTabs">
+                        <li><button type="button" class="mainRightMenuButtons">COMPRAR</button></li>
+                        <li><button type="button" class="mainRightMenuButtons">ALUGAR</button></li>
+                        <li><button type="button" class="mainRightMenuButtons">IMÓVEIS NOVOS</button></li>
+                    </ul>
+                    <nav class="radioMenuContainer">
+                        <div>
+
+                        </div>
+                        <div>
+                            <div class="visualizationToggle">
+                                <input type="radio" name="dispositionMenu" id="radioList" class="radioButtonsMenu" value="1">
+                                <label for="radioList" id="radioListLabel"></label>
+                            </div>
+                            <div class="visualizationToggle">
+                                <input type="radio" name="dispositionMenu" id="radioWindows11" class="radioButtonsMenu" value="2">
+                                <label for="radioWindows11" id="radioWindows11Label"></label>
+                            </div>
+                            <div class="visualizationToggle">
+                                <input type="radio" name="dispositionMenu" id="radioBlocks" class="radioButtonsMenu" value="3">
+                                <label for="radioBlocks" id="radioBlocksLabel"></label>
+                            </div>
+                        </div>
+                    </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

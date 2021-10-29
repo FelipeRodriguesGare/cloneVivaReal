@@ -1,0 +1,506 @@
+a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 56px;
+    background: #1190cd;
+    z-index: 10000000000;
+}
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    height: 100%;
+    width:91.2%;
+    padding-left: 4.4%;
+    padding-right: 4.4%;
+}
+
+nav div {
+    display: flex;
+}
+
+.homeImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-right: 0.8%;
+    box-sizing: border-box;
+}
+
+.homeImage {
+    background-size: 50%;
+    height: 24px;
+    width: 130px;
+    background: url(https://cdn1.vivareal.com/p/1-2122731/v/static/app/svg/styleguide/logo/vivareal-5bcdffca.svg) no-repeat 0 44%;
+}
+.menuButtonsContainer {
+    display: flex;
+}
+
+.menuButtonsContainer li{
+    display: block;
+    height: 56px;
+    width: fit-content;
+}
+
+
+.menuButtons {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.menuButtons div {
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+    font-weight: bolder;
+    font-size: 13px;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+}
+
+.menuButtons:hover {
+    background: #249ad1;
+}
+
+.loginMenuContainer {
+    right: 0;
+}
+
+/* ==================================== MAIN ================================ */
+
+
+/* ------------------------------- FIND HIERARCHY ---------------------------*/
+.sitePathContainer {
+    padding: 0 4.4%;
+}
+
+.point::before {
+    content: ".";
+    color: #757575;
+    position: relative;
+    top: -3px;
+    font-size: 20px;
+    padding: 0 5px;
+    color: #757575;
+}
+
+.sitePath {
+    padding: 24px 0 16px;
+}
+
+.sitePath a{
+    font-size: 13px;
+    font-weight:100px;
+    cursor: pointer;
+    color: #757575;
+}
+
+.sitePath a:hover {
+    cursor: pointer;
+    color: #1190cd;
+}
+
+.sitePath a:last-child {
+    cursor: text;
+    color: #757575;
+}
+
+.sitePath a:last-child:hover {
+    cursor: text;
+    color: #1190cd;
+}
+
+/* ------------------------------- MAIN CONTENT ---------------------------*/
+.mainGridContainer {
+    display: grid;
+    grid-template-columns: 288px 69.3%;
+    grid-gap: 24px;
+    grid-template-areas: 
+    "esquerda direita";
+}
+
+.findBlockContainer {
+    height: 429px;
+    background: #fdd685;
+    border: 1px solid #fdb10f;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.esquerda {
+    grid-area: esquerda;
+    width: 100%;
+}
+
+.direta {
+    grid-area: direta;
+}
+
+.findBlock{
+    margin-bottom: 15px;
+}
+
+.formLabel {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #0000008A;
+    height: 21px;
+    display: flex;
+    align-items: center;
+}
+
+#locationSearch {
+    font-weight: 400;
+    width: 226px;
+    margin-top: 9px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border-color: hsla(0,0%,100%,.001);
+    padding: 11px 12px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#locationSearch:focus {
+    border: 2px solid;
+    border-color: #1190cd;
+}
+
+/* ----------------------------- SLIDER BUTTON ------------------------------ */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 32px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1190cd1a;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 2px;
+    top: 2px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #1190cd;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.sliderSwitchContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.sliderSwitchContainer p {
+    padding-left: 8px;
+    color: black;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+#typeSelection {
+    font-weight: 400;
+    width: 254px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border-color: hsla(0,0%,100%,.001);
+    padding: 11px 12px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 25%;
+}
+
+#typeSelectionWhite{
+    font-weight: 400;
+    width: 254px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border-color: hsla(0,0%,100%,.001);
+    padding: 11px 12px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 16px;
+}
+
+#typeSelection:active {
+    border-color: #1190cd;
+}
+
+.tipoImovelContainer {
+    margin-bottom: 23px;
+}
+
+.inputDefault {
+    font-weight: 400;
+    width: 226px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border-color: hsla(0,0%,100%,.001);
+    padding: 11px 12px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 8px;
+}
+.inputDefault:focus {
+    border: 2px solid;
+    border-color: #1190cd;
+}
+
+.faixaPreco {
+    display: flex;
+    justify-content: space-between;
+}
+
+#precomin {
+    padding: 11px 12px 11px 32px;
+    width: 71px;
+    height: 18px;
+    text-align: end;
+}
+
+#precomax {
+    padding: 11px 12px 11px 32px;
+    width: 71px;
+    height: 18px;
+    text-align: end;
+}
+
+#precomax::placeholder {
+    text-align: end;
+}
+
+#precomax::-webkit-outer-spin-button,
+#precomax::-webkit-inner-spin-button,
+#precomin::-webkit-outer-spin-button,
+#precomin::-webkit-inner-spin-button  {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.currencyType {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    position: relative;
+    top: -30px;
+    left: 12px;
+    color: #75758bc4;
+}
+
+.faixaPreco div {
+    width: 119px;
+}
+
+.faixaPreco div:first-child:after{
+    color: rgba(0,0,0,.12);
+    content: "__";
+    position: relative;
+    bottom: 43%;
+    left: 84%;
+    width: 16px;
+}
+
+.roundButtonsContainer {
+    display: flex;
+    justify-content: space-between;    
+    margin-top: 16px;
+}
+
+.roundButton {
+    color: #0000008a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    border-style: none;
+    border-radius: 32px;
+    width: 41px;
+    height: 32px;
+    padding: 0px 12px;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+}
+
+.roundButton:hover {
+    background-color: #ebebeb;
+}
+
+/* ------------------------------ MENU MAIN RIGHT ---------------------------- */
+
+.menuTabsOutContainer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.menuTabs {
+    display: flex;
+    align-items: center;
+}
+
+.mainRightMenuButtons {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0 24px;
+    height: 44px;
+    background-color: white;
+    border-style: none;
+    color: #1190cd;
+}
+
+.mainRightMenuButtons:hover {
+    background-color: #1190cd14;
+}
+
+.mainRightMenuButtonsActive{
+    cursor:unset;
+    box-shadow: inset 0 -3px 0 0 #1190cd, 0 1px 0 0 #1190cd;
+}
+
+.radioMenuContainer {
+    justify-content: space-around;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.visualizationToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 4px;
+    width: 37px;
+    height: 37px;
+}
+
+.visualizationToggle:hover {
+    background-color: #1190cd14;
+}
+
+.radioButtonsMenu {
+     display: none;
+}
+
+.visualizationToggle #radioListLabel {
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-list-black.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    height: 100%;
+    max-height: 24px;
+    width: 24px;
+}
+
+.visualizationToggle:hover #radioListLabel {
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-list-blue.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    height: 100%;
+    width: 24px;
+}
+
+.visualizationToggle #radioWindows11Label{
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-2-black.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    max-height: 24px;
+    height: 100%;
+    width: 24px;
+}
+
+.visualizationToggle:hover #radioWindows11Label{
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-2-blue.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    max-height: 24px;
+    height: 100%;
+    width: 24px;
+}
+
+.visualizationToggle #radioBlocksLabel{
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-black.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    max-height: 24px;
+    height: 100%;
+    width: 24px;
+}
+
+.visualizationToggle:hover #radioBlocksLabel{
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-blue.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    max-height: 24px;
+    height: 100%;
+    width: 24px;
+}
