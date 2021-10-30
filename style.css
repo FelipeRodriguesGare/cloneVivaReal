@@ -1,14 +1,14 @@
+:root{
+    font-family: 'Open Sans', sans-serif;
+}
+
 a {
     text-decoration: none;
     width: 100%;
     height: 100%;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
 }
 
-p {
-    font-family: 'Open Sans', sans-serif;
-}
 
 header {
     width: 100%;
@@ -22,8 +22,9 @@ nav {
     justify-content: space-between;
     height: 100%;
     width:91.2%;
-    padding-left: 4.4%;
-    padding-right: 4.4%;
+    /* padding-left: 4.4%;
+    padding-right: 4.4%; */
+    padding: 0 48px;
 }
 
 nav div {
@@ -63,7 +64,6 @@ nav div {
 }
 
 .menuButtons div {
-    font-family: 'Open Sans', sans-serif;
     white-space: nowrap;
     font-weight: bolder;
     font-size: 13px;
@@ -84,7 +84,8 @@ nav div {
 
 /* ------------------------------- FIND HIERARCHY ---------------------------*/
 .sitePathContainer {
-    padding: 0 4.4%;
+    /* padding: 0 4.4%; */
+    padding: 0 48px;
 }
 
 .point::before {
@@ -126,14 +127,15 @@ nav div {
 /* ------------------------------- MAIN CONTENT ---------------------------*/
 .mainGridContainer {
     display: grid;
-    grid-template-columns: 288px 69.3%;
+    grid-template-columns: 288px 2fr;
     grid-gap: 24px;
     grid-template-areas: 
     "esquerda direita";
 }
 
 .findBlockContainer {
-    height: 429px;
+    /* height: 429px; */
+    height: fit-content;
     background: #fdd685;
     border: 1px solid #fdb10f;
     border-radius: 4px;
@@ -150,11 +152,10 @@ nav div {
 }
 
 .findBlock{
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .formLabel {
-    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 13px;
     color: #0000008A;
@@ -178,6 +179,39 @@ nav div {
 #locationSearch:focus {
     border: 2px solid;
     border-color: #1190cd;
+}
+
+.jsCitySearched {
+    width: fit-content;
+    cursor: pointer;
+    height: 28px;
+    margin-bottom: 8px;
+}    
+
+.jsCitySearched label span{
+    height: 20px;
+    cursor: pointer;
+    color: #0000008a;
+    font-size: 13px;
+}
+
+.jsclearSearch {
+    color: #0000008a;
+    background: none;
+    border: none;
+}
+
+.jsclearSearch::after {
+    content: " × ";
+    padding: 0 4px;
+    width: 14px;
+    height: 14px;
+}
+
+.jsCitySearched:hover .jsclearSearch::after{
+    border-radius: 32px;
+    background-color: #00000066;
+    color: #fdd685;
 }
 
 /* ----------------------------- SLIDER BUTTON ------------------------------ */
@@ -269,7 +303,6 @@ input:checked + .slider:before {
     border-color: hsla(0,0%,100%,.001);
     padding: 11px 12px;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
     opacity: 25%;
 }
 
@@ -282,7 +315,6 @@ input:checked + .slider:before {
     border-color: hsla(0,0%,100%,.001);
     padding: 11px 12px;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
     margin-bottom: 16px;
 }
 
@@ -302,8 +334,9 @@ input:checked + .slider:before {
     border-color: hsla(0,0%,100%,.001);
     padding: 11px 12px;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
     margin-top: 8px;
+    font-family: 'Open Sans', sans-serif;
+
 }
 .inputDefault:focus {
     border: 2px solid;
@@ -342,7 +375,6 @@ input:checked + .slider:before {
 }
 
 .currencyType {
-    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     position: relative;
     top: -30px;
@@ -386,12 +418,27 @@ input:checked + .slider:before {
     background-color: #ebebeb;
 }
 
+.roundButtonClicked {
+    color: white;
+    background-color: #1190cd;
+}
+
+.roundButtonClicked:hover {
+    color: white;
+    background-color: #1190cd;
+}
+
 /* ------------------------------ MENU MAIN RIGHT ---------------------------- */
+
+.menuRightContainer {
+    margin-bottom: 27px;
+}
 
 .menuTabsOutContainer {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ebebeb;
+    margin-bottom: 32px;
 }
 
 .menuTabs {
@@ -400,9 +447,8 @@ input:checked + .slider:before {
 }
 
 .mainRightMenuButtons {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
     padding: 0 24px;
     height: 44px;
     background-color: white;
@@ -420,6 +466,7 @@ input:checked + .slider:before {
 }
 
 .radioMenuContainer {
+    padding: 0px;
     justify-content: space-around;
     position: relative;
     right: 0;
@@ -495,7 +542,7 @@ input:checked + .slider:before {
     width: 24px;
 }
 
-.visualizationToggle:hover #radioBlocksLabel{
+.visualizationToggle:hover #radioBlocksLabel, .visualizationToggle:focus #radioBlocksLabel{
     background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-blue.svg);
     background-position: 50%;
     background-repeat: no-repeat;
@@ -503,4 +550,100 @@ input:checked + .slider:before {
     max-height: 24px;
     height: 100%;
     width: 24px;
+}
+
+.jsNumberFoundText h1 {
+    font-size: 20px;
+}
+
+.jsNumberFoundText h1 strong{
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.jsNumberFoundButton {
+    height: 32px;
+    width: fit-content;
+    border-radius: 1px;
+    border-color: #1190cd;
+    background-color: white;
+}
+
+.jsNumberFoundButton {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0px 20px 0px 12px;
+    color: #1190cd;
+    height: 32px;
+    border: 1px solid;
+    border-radius: 32px;
+    border-color: #1190cd;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    margin-top: 15px;
+}
+
+.jsNumberFoundButton:hover {
+    background-color: #ecf6fc;
+}
+
+.jsNumberFoundButton span {
+    text-align: center;
+    height: 27px;
+}
+.jsNumberFoundButton span::after {
+    right: -8px;
+    top: 2px;
+    font-size: 16px;
+    position: relative;
+    content: " × ";
+    width: 16px;
+    height: 16px;
+}
+
+/* ===================================== JS CARDS ========================= */
+
+.houseOfCards article {
+    cursor: pointer;
+    display: grid;
+    height: 240px;
+    grid-template-columns: auto 1fr;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    grid-template-areas: 'esquerdaCard direitaCard';
+    margin-bottom: 16px;
+}
+
+.houseOfCards article:hover {
+    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.imageWrapper {
+    grid-area: esquerdaCard;
+    height: 240px;
+    width: 360px;
+}
+
+.infoOutContainer {
+    padding: 16px;
+}
+
+.addressContainer {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #0000008a;   
+    font-family: 'Open Sans', sans-serif; 
+    height: 23px;
 }
