@@ -49,6 +49,10 @@
                             <label class="formLabel"for="locationSearch">LOCALIZAÇÃO DO IMÓVEL</label>
                             <input type="text" placeholder="Digite uma rua, bairro ou cidade" id="locationSearch">
                         </div>
+                        <div class="jsCitySearched">
+                            <label for="clearSearchYellowBox"><span>São Paulo - SP</span></label>
+                            <button type="button" class="jsclearSearch" id="clearSearchYellowBox"></button>
+                        </div>
                         <div class="virtualTourContainer">
                             <p class="formLabel">IMÓVEL COM</p>
                             <div class="sliderSwitchContainer">
@@ -92,31 +96,43 @@
                     </div>
                 </div>
                 <div class="direita">
-                    <div class="menuTabsOutContainer">
-                    <ul class="menuTabs">
-                        <li><button type="button" class="mainRightMenuButtons">COMPRAR</button></li>
-                        <li><button type="button" class="mainRightMenuButtons">ALUGAR</button></li>
-                        <li><button type="button" class="mainRightMenuButtons">IMÓVEIS NOVOS</button></li>
-                    </ul>
-                    <nav class="radioMenuContainer">
-                        <div>
+                    <div class="menuRightContainer">
+                        <div class="menuTabsOutContainer">
+                            <ul class="menuTabs">
+                                <li><button type="button" class="mainRightMenuButtons">COMPRAR</button></li>
+                                <li><button type="button" class="mainRightMenuButtons">ALUGAR</button></li>
+                                <li><button type="button" class="mainRightMenuButtons">IMÓVEIS NOVOS</button></li>
+                            </ul>
+                            <nav class="radioMenuContainer">
+                                <div>
 
+                                </div>
+                                <div>
+                                    <div class="visualizationToggle">
+                                        <input type="radio" name="dispositionMenu" id="radioList" class="radioButtonsMenu" value="1">
+                                        <label for="radioList" id="radioListLabel"></label>
+                                    </div>
+                                    <div class="visualizationToggle">
+                                        <input type="radio" name="dispositionMenu" id="radioWindows11" class="radioButtonsMenu" value="2">
+                                        <label for="radioWindows11" id="radioWindows11Label"></label>
+                                    </div>
+                                    <div class="visualizationToggle">
+                                        <input type="radio" name="dispositionMenu" id="radioBlocks" class="radioButtonsMenu" value="3">
+                                        <label for="radioBlocks" id="radioBlocksLabel"></label>
+                                    </div>
+                                </div>
+                            </nav>
+                            
                         </div>
-                        <div>
-                            <div class="visualizationToggle">
-                                <input type="radio" name="dispositionMenu" id="radioList" class="radioButtonsMenu" value="1">
-                                <label for="radioList" id="radioListLabel"></label>
-                            </div>
-                            <div class="visualizationToggle">
-                                <input type="radio" name="dispositionMenu" id="radioWindows11" class="radioButtonsMenu" value="2">
-                                <label for="radioWindows11" id="radioWindows11Label"></label>
-                            </div>
-                            <div class="visualizationToggle">
-                                <input type="radio" name="dispositionMenu" id="radioBlocks" class="radioButtonsMenu" value="3">
-                                <label for="radioBlocks" id="radioBlocksLabel"></label>
+                        <div class="jsNumberFoundText">
+                            <h1><strong>1.680.122</strong>  Imóveis à venda em {São Paulo - SP}</h1>
+                            <div>
+                                <button type="button" class="jsNumberFoundButton"><span>São Paulo - SP</span></button>
                             </div>
                         </div>
-                    </nav>
+                    </div>
+                    <div class="houseOfCards">
+
                     </div>
                 </div>
             </div>
