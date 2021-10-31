@@ -1,4 +1,5 @@
 import Request from "./Api-Request.js";
+import { amenites } from "./parse-Amenities.js";
 
 export const houseOfCards = async (state, city) => {
     try{
@@ -9,6 +10,7 @@ export const houseOfCards = async (state, city) => {
             const card = document.createElement('article')
             card.append(imgFactory(house))
             card.append(infoFactory(house))
+            card.append(mountPricing(house))
             cardContainer.append(card);
         })
 
@@ -29,12 +31,11 @@ const imgFactory = (obj) => {
 const infoFactory = (obj) => {
     let divOutContainer = document.createElement('div')
     divOutContainer.append(mountCardHeaderElement(obj))
+    divOutContainer.append(mountHousePerks(obj))
     divOutContainer.append(mountHouseAmenities(obj))
-    // divOutContainer.append(addressElement(obj))
-    // divOutContainer.append(nameElement(obj))
-    // divOutContainer.append(amenites(obj))
-    // divOutContainer.append(housePerks(obj))
-    // divOutContainer.append(pricing(obj))
+    
+    // divOutContainer.append(mountPricing(obj))
+
     divOutContainer.classList.add('infoOutContainer')
     return divOutContainer
 }
@@ -61,28 +62,6 @@ const nameElement = (obj) => {
     return name
 }
 
-const amenites = (item) => {
-    const parseToPortuguese = {
-        PARTY_HALL: 'Salão de Festas',
-        FURNISHED: 'Mobiliado',
-        FIREPLACE: 'Lareira',
-        POOL: 'Piscina',
-        BARBECUE_GRILL: 'Churrasqueira',
-        AIR_CONDITIONING: 'Ar Condicionado',
-        ELEVATOR: 'Elevador',
-        BICYCLES_PLACE: 'Bicicletário',
-        GATED_COMMUNITY: 'Condomínio Fechado',
-        PLAYGROUND: 'Playground',
-        SPORTS_COURT: 'Área de Esportes',
-        PETS_ALLOWED: 'Animais Permitidos',
-        AMERICAN_KITCHEN: 'Cusinha Americana',
-        TENNIS_COURT: 'Quadra de Tennis',
-        LAUNDRY: 'Lavanderia',
-        GYM: 'Academia'
-    } 
-    return parseToPortuguese[item]
-}
-
 const mountHouseAmenities = (obj) => {
     let amenitiesContainer = document.createElement('ul')
     obj.amenities.forEach((item)=>{
@@ -95,12 +74,34 @@ const mountHouseAmenities = (obj) => {
     return amenitiesContainer
 }
 
-
-const housePerks = (obj) => {
-
+const mountHousePerks = (obj) => {
+    let perksContainer = document.createElement('ul')
+    perksContainer.classList.add('perksContainer')
+    perksContainer.innerHTML = `
+        <li><span class="perkNumber">${obj.houseSize}</span><span> m² </span></li>    
+        <li><span class="perkNumber">${obj.bedrooms}</span><span> Quartos </span></li>    
+        <li><span class="perkNumber">${obj.bathroom}</span><span> Banheiros </span></li>    
+        <li><span class="perkNumber">${obj.parking}</span><span> Vaga </span></li>    
+    `
+    return perksContainer
 }
 
+const formatNumber = (number) => new Intl.NumberFormat('pt-BR',{style: 'currency', currency: 'BRL', maximumFractionDigits: 0,}).format(number)
 
-const pricing = (obj) => {
-
+const mountPricing = (obj) => {
+    let housePrice = document.createElement('div')
+    let price = document.createElement('p')
+    let formatedPrice = formatNumber(obj.price)
+    price.innerText = formatedPrice
+    price.classList.add('priceContainer')
+    housePrice.append(price)
+    housePrice.classList.add('priceBlockContainer')
+    if (obj.type === "APARTMENT" || obj.type === "CONDOMINIUM") {
+        let condo = document.createElement('div')
+        condo.classList.add('condoContainer')
+        condo.innerHTML = `<span>Condomínio: </span> <span class='perkNumber'> --- </span>`
+        if (obj.condoFee) condo.innerHTML = `<span>Condomínio: </span> <span class='perkNumber'> ${formatNumber(obj.condoFee)} </span>`
+        housePrice.append(condo)
+    } 
+    return housePrice
 }

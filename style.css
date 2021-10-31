@@ -15,6 +15,7 @@ header {
     height: 56px;
     background: #1190cd;
     z-index: 10000000000;
+    min-width: 1030px;
 }
 
 nav {
@@ -65,8 +66,9 @@ nav div {
     white-space: nowrap;
     font-weight: bolder;
     font-size: 13px;
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
+    padding-left: 16px;
+    padding-right: 16px;
+
 }
 
 .menuButtons:hover {
@@ -82,8 +84,12 @@ nav div {
 
 /* ------------------------------- FIND HIERARCHY ---------------------------*/
 .sitePathContainer {
-    /* padding: 0 4.4%; */
     padding: 0 48px;
+    min-width: 934px;
+    max-width: 1344px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .point::before {
@@ -635,8 +641,7 @@ img {
 
 .infoOutContainer {
     padding: 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    min-width: 300px;
 }
 
 .addressContainer {
@@ -652,19 +657,21 @@ img {
 }
 
 .nameContainer {
-    display: block;
-    overflow-wrap: unset;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 99%;
+    padding-right: 10px;
+    white-space: nowrap;
     font-size: 20px;
     color: #000000de;
+    line-height: 28px;
+    max-height: 28px;
     overflow: hidden;
+    font-weight: 400;
 }
 
 .divHeader {
-    min-width: 400px;
-    overflow: hidden;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
+    display: grid;
 }
 
 .amenitiesContainer {
@@ -673,6 +680,7 @@ img {
     justify-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    text-align: top;
 }
 
 .amenitiesContainer li {
@@ -683,4 +691,62 @@ img {
     padding: 0px 8px;
     line-height: 21px;
     color: #a8a8a8;
+    font-weight: 600;
+    max-height: 21px;
+}
+
+.perksContainer {
+    margin: 12px 0px;
+    display: flex;
+}
+
+.perksContainer li {
+    font-weight: 400;
+    line-height: 23px;
+    padding-right: 8px;
+    font-size: 13px;
+}
+
+.perkNumber {
+    font-weight: 600;
+}
+
+.priceBlockContainer {
+    position: relative;
+    bottom: 64.89px;
+    height: 49px;
+    left: 376px;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.priceContainer {
+    color: #000000de;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.condoContainer {
+    line-height: 19px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 1170px) {
+    
+    .imageWrapper {
+        grid-area: esquerdaCard;
+        height: 240px;
+        width: 240px;
+    }
+    
+    .priceBlockContainer {
+        position: relative;
+        width: fit-content;
+        bottom: 64.89px;
+        left: 256px;
+    }
+
 }
