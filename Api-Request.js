@@ -27,8 +27,10 @@ class Request {
                 obj.bedrooms = value.listing.bedrooms[0]
                 obj.parking = value.listing.parkingSpaces[0]
                 obj.type = value.listing.unitTypes[0]
+                obj.amenities = value.listing.amenities
                 return [...acc, obj]
             },[])
+            final.totalCount = response.search.totalCount
             console.log(final)
             console.log(response)
             return final
