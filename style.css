@@ -21,9 +21,7 @@ nav {
     display:flex;
     justify-content: space-between;
     height: 100%;
-    width:91.2%;
-    /* padding-left: 4.4%;
-    padding-right: 4.4%; */
+    width: 100% - 48px;
     padding: 0 48px;
 }
 
@@ -147,8 +145,9 @@ nav div {
     width: 100%;
 }
 
-.direta {
-    grid-area: direta;
+.direita {
+    /* grid-area: direta; */
+    width: 100%;
 }
 
 .findBlock{
@@ -432,6 +431,7 @@ input:checked + .slider:before {
 
 .menuRightContainer {
     margin-bottom: 27px;
+    /* width: 100%; */
 }
 
 .menuTabsOutContainer {
@@ -635,6 +635,8 @@ img {
 
 .infoOutContainer {
     padding: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .addressContainer {
@@ -643,7 +645,42 @@ img {
     font-size: 13px;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-size-adjust: none;
     color: #0000008a;   
     font-family: 'Open Sans', sans-serif; 
     height: 23px;
+}
+
+.nameContainer {
+    display: block;
+    overflow-wrap: unset;
+    font-size: 20px;
+    color: #000000de;
+    overflow: hidden;
+}
+
+.divHeader {
+    min-width: 400px;
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.amenitiesContainer {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.amenitiesContainer li {
+    font-size: 13px;
+    background-color: #ebebeb;  
+    border-radius: 12px;  
+    margin-right: 8px;
+    padding: 0px 8px;
+    line-height: 21px;
+    color: #a8a8a8;
 }

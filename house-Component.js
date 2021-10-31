@@ -28,8 +28,9 @@ const imgFactory = (obj) => {
 
 const infoFactory = (obj) => {
     let divOutContainer = document.createElement('div')
-    // console.log(obj)
-    divOutContainer.append(addressElement(obj))
+    divOutContainer.append(mountCardHeaderElement(obj))
+    divOutContainer.append(mountHouseAmenities(obj))
+    // divOutContainer.append(addressElement(obj))
     // divOutContainer.append(nameElement(obj))
     // divOutContainer.append(amenites(obj))
     // divOutContainer.append(housePerks(obj))
@@ -38,23 +39,67 @@ const infoFactory = (obj) => {
     return divOutContainer
 }
 
+const mountCardHeaderElement = (obj) => {
+    let adr = document.createElement('div')
+    adr.classList.add('divHeader')
+    adr.append(addressElement(obj))
+    adr.append(nameElement(obj))
+    return adr
+}
+
 const addressElement = (obj) => {
-    let adr = document.createElement('p')
+    let adr = document.createElement('span')
     adr.innerText = obj.address
     adr.classList.add('addressContainer')
     return adr
 }
-const nameElement = (obj) => {
 
+const nameElement = (obj) => {
+    let name = document.createElement('span')
+    name.innerText = obj.houseName
+    name.classList.add('nameContainer')
+    return name
 }
+
+const amenites = (item) => {
+    const parseToPortuguese = {
+        PARTY_HALL: 'Salão de Festas',
+        FURNISHED: 'Mobiliado',
+        FIREPLACE: 'Lareira',
+        POOL: 'Piscina',
+        BARBECUE_GRILL: 'Churrasqueira',
+        AIR_CONDITIONING: 'Ar Condicionado',
+        ELEVATOR: 'Elevador',
+        BICYCLES_PLACE: 'Bicicletário',
+        GATED_COMMUNITY: 'Condomínio Fechado',
+        PLAYGROUND: 'Playground',
+        SPORTS_COURT: 'Área de Esportes',
+        PETS_ALLOWED: 'Animais Permitidos',
+        AMERICAN_KITCHEN: 'Cusinha Americana',
+        TENNIS_COURT: 'Quadra de Tennis',
+        LAUNDRY: 'Lavanderia',
+        GYM: 'Academia'
+    } 
+    return parseToPortuguese[item]
+}
+
+const mountHouseAmenities = (obj) => {
+    let amenitiesContainer = document.createElement('ul')
+    obj.amenities.forEach((item)=>{
+        let amenitiesElement = document.createElement('li')
+        let parsedAmenities = amenites(item)
+        amenitiesElement.append(parsedAmenities)
+        amenitiesContainer.append(amenitiesElement)
+    })
+    amenitiesContainer.classList.add('amenitiesContainer')
+    return amenitiesContainer
+}
+
 
 const housePerks = (obj) => {
 
 }
 
-const amenites = (obj) => {
-    
-}
 
 const pricing = (obj) => {
 
