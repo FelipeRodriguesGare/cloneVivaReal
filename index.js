@@ -18,4 +18,4 @@ clickHandlerMenu(yellowBoxRoundButtonsContainer, yellowBoxRoundButtons, 'roundBu
 // const brubru = new Request()
 // brubru.getHouseObject('sp', 'sao-paulo')
 
-houseOfCards('sp','sao-paulo')
+houseOfCards('rj','rio-de-janeiro')
