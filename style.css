@@ -734,6 +734,46 @@ img {
     font-size: 13px;
 }
 
+.buttonContainer {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    bottom: 56px;
+    margin-right: 16px;
+    height: 40px;
+    line-height: 19px;
+}
+
+.buttonContainer button {
+    opacity: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    padding: 8px 12px;
+    font-weight: 600;
+}
+
+.buttonContainer button:last-child {
+    margin-left: 8px;
+}
+
+.houseOfCards article:hover .buttonContainer button {
+    opacity: 100;
+    font-weight: 600;
+    background-color: white;
+    border: none;
+    color: #EE6500;
+    transition: opacity .2s ease-in-out;
+}
+
+.buttonContainer button:hover {
+    border: none;
+    border-radius: 4px;
+    color: white !important;
+    background-color: #EE6500 !important;
+    opacity: 100;
+    transition: opacity .2s ease-in-out;
+}
+
 @media screen and (max-width: 1170px) {
     
     .imageWrapper {
