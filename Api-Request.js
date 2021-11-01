@@ -31,7 +31,6 @@ class Request {
                 return [...acc, obj]
             },[])
             final.totalCount = response.search.totalCount
-            console.log(final)
             return final
         } catch (err) {
             console.log(err)

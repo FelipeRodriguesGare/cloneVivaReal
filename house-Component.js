@@ -1,16 +1,18 @@
 import Request from "./Api-Request.js";
 import { amenites } from "./parse-Amenities.js";
 
-export const houseOfCards = async (state, city) => {
+export const houseOfCards = async (obj) => {
     try{
+        const cityObj = await obj
         const houseRequest = new Request()
-        const houseObject = await houseRequest.getHouseObject(state, city)
+        const houseObject = await houseRequest.getHouseObject(cityObj.UF, cityObj.city)
         const cardContainer = document.querySelector('.houseOfCards')
         houseObject.map((house)=>{
             const card = document.createElement('article')
             card.append(imgFactory(house))
             card.append(infoFactory(house))
             card.append(mountPricing(house))
+            card.append(mountButtonsOrange(house))
             cardContainer.append(card);
         })
 
@@ -33,9 +35,6 @@ const infoFactory = (obj) => {
     divOutContainer.append(mountCardHeaderElement(obj))
     divOutContainer.append(mountHousePerks(obj))
     divOutContainer.append(mountHouseAmenities(obj))
-    
-    // divOutContainer.append(mountPricing(obj))
-
     divOutContainer.classList.add('infoOutContainer')
     return divOutContainer
 }
@@ -104,4 +103,16 @@ const mountPricing = (obj) => {
         housePrice.append(condo)
     } 
     return housePrice
+}
+
+const mountButtonsOrange = (obj) => {
+    let buttonContainer = document.createElement('div')
+    let telButton = document.createElement('button')
+    let msgButton = document.createElement('button')
+
+    buttonContainer.classList.add('buttonContainer')
+    telButton.innerText = 'TELEFONE'
+    msgButton.innerText = 'ENVIAR MENSAGEM'
+    buttonContainer.append(telButton, msgButton)
+    return buttonContainer
 }
