@@ -37,7 +37,7 @@ class Request {
             final.totalCount = response.search.totalCount
             return final
         } catch (err) {
-            return err
+            errorDisplay(err)
         }
     }
 }

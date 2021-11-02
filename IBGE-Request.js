@@ -1,5 +1,3 @@
-import { errorDisplay } from "./error-Component.js";
-
 class RequestIBGE {
 
     async makeRequest(url) {
@@ -18,7 +16,7 @@ class RequestIBGE {
             let final = {city: city, UF: (response.microrregiao.mesorregiao.UF.sigla).toLowerCase()}
             return final
         } catch (err) {
-            errorDisplay(err)
+            
             return err
         }
     }
