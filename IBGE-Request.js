@@ -1,4 +1,4 @@
-import { cityFormater } from "./city-Formater.js";
+import { errorDisplay } from "./error-Component.js";
 
 class RequestIBGE {
 
@@ -7,7 +7,7 @@ class RequestIBGE {
             const response = await fetch(url)
             return await response.json();
         } catch {
-            throw new Error ("Server request failed!")
+            throw new Error ("status 500")
         }
     }
 
@@ -18,7 +18,8 @@ class RequestIBGE {
             let final = {city: city, UF: (response.microrregiao.mesorregiao.UF.sigla).toLowerCase()}
             return final
         } catch (err) {
-            console.log(err)
+            errorDisplay(err)
+            return err
         }
     }
 }
