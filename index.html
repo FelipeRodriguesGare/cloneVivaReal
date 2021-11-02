@@ -39,7 +39,6 @@
         <div class="sitePathContainer">
             <div class="sitePath">
                 <a> Viva Real</a> <span class="point"></span> <a href=""> Venda </a>
-                <!-- ====================== /\ ISSO AQUI ALTERA COM JS /\ =========================== -->
             </div>
         </div>
         <div class="sitePathContainer">
@@ -51,8 +50,7 @@
                             <input type="text" placeholder="Digite uma rua, bairro ou cidade" id="locationSearch">
                         </div>
                         <div class="jsCitySearched">
-                            <label for="clearSearchYellowBox"><span>São Paulo - SP</span></label>
-                            <button type="button" class="jsclearSearch" id="clearSearchYellowBox"></button>
+                            
                         </div>
                         <div class="virtualTourContainer">
                             <p class="formLabel">IMÓVEL COM</p>
@@ -66,19 +64,19 @@
                         </div>
                         <div class="tipoImovelContainer">
                             <label class="formLabel" for="typeSelection">TIPO DE IMÓVEL</label>
-                            <select type="text" placeholder="Digite uma rua, bairro ou cidade" id="typeSelection">
-                                <option value="" disabled selected>Mostrar todos</option>
+                            <select type="text" id="typeSelection">
+                                <option value="" disabled selected class="formLabel">Mostrar todos</option>
                             </select>
                         </div>
                         <div class="faixaPreco">
                             <div>
                                 <label class="formLabel" for="precomin">PREÇO MÍNIMO</label>
-                                <input type="number" placeholder="" id="precomin" class="inputDefault">
+                                <input type="number" placeholder="" id="precomin" class="inputDefault preco">
                                 <label for="precomin" class="currencyType">R$</label>
                             </div>
                             <div>
                                 <label class="formLabel" for="precomax">PREÇO MÁXIMO</label>
-                                <input type="number" placeholder="ilimitado" id="precomax" class="inputDefault" step="0.01">
+                                <input type="number" placeholder="ilimitado" id="precomax" class="inputDefault preco" step="0.01">
                                 <label for="precomax" class="currencyType">R$</label>
                             </div>
                         </div>
@@ -86,12 +84,50 @@
                             <div class="formLabel">
                                 NÚMERO DE QUARTOS
                             </div>
-                            <div class="roundButtonsContainer">
-                                <button type="button" class="roundButton">1+</button>
-                                <button type="button" class="roundButton">2+</button>
-                                <button type="button" class="roundButton">3+</button>
-                                <button type="button" class="roundButton">4+</button>
-                                <button type="button" class="roundButton">5+</button>
+                            <div class="roundButtonsContainer" id="roomsFilter">
+                                <button type="button" class="roundButton" value="1+ quartos">1+</button>
+                                <button type="button" class="roundButton" value="2+ quartos">2+</button>
+                                <button type="button" class="roundButton" value="3+ quartos">3+</button>
+                                <button type="button" class="roundButton" value="4+ quartos">4+</button>
+                                <button type="button" class="roundButton" value="5+ quartos">5+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="findBlockContainer whiteBlockBorder">
+                        <div class="faixaPreco">
+                            <div>
+                                <label class="formLabel" for="areaMin">ÁREA MÍNIMA</label>
+                                <input type="number" placeholder="" id="areaMin" class="inputDefault area">
+                                <label for="areaMin" class="areaType">m²</label>
+                            </div>
+                            <div>
+                                <label class="formLabel" for="areamax">ÁREA MÁXIMA</label>
+                                <input type="number" placeholder="ilimitado" id="areaMax" class="inputDefault area" step="0.01">
+                                <label for="areamax" class="areaType">m²</label>
+                            </div>
+                        </div>
+                        <div class="numeroQuartos">
+                            <div class="formLabel">
+                                NÚMERO DE VAGAS NA GARAGEM
+                            </div>
+                            <div class="roundButtonsContainer spacer" id="parkingFilter">
+                                <button type="button" class="roundButton whiteBlockContainer" value="1+ vagas">1+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="2+ vagas">2+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="3+ vagas">3+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="4+ vagas">4+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="5+ vagas">5+</button>
+                            </div>
+                        </div>
+                        <div class="numeroQuartos">
+                            <div class="formLabel">
+                                NÚMERO DE BANHEIROS
+                            </div>
+                            <div class="roundButtonsContainer" id="bathFilter">
+                                <button type="button" class="roundButton whiteBlockContainer" value="1+ banheiros">1+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="2+ banheiros">2+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="3+ banheiros">3+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="4+ banheiros">4+</button>
+                                <button type="button" class="roundButton whiteBlockContainer" value="5+ banheiros">5+</button>
                             </div>
                         </div>
                     </div>
@@ -100,7 +136,7 @@
                     <div class="menuRightContainer">
                         <div class="menuTabsOutContainer">
                             <ul class="menuTabs">
-                                <li><button type="button" class="mainRightMenuButtons">COMPRAR</button></li>
+                                <li><button type="button" class="mainRightMenuButtons mainRightMenuButtonsActive">COMPRAR</button></li>
                                 <li><button type="button" class="mainRightMenuButtons">ALUGAR</button></li>
                                 <li><button type="button" class="mainRightMenuButtons">IMÓVEIS NOVOS</button></li>
                             </ul>
@@ -126,10 +162,8 @@
                             
                         </div>
                         <div class="jsNumberFoundText">
-                            <h1><strong>1.680.122</strong>  Imóveis à venda em {São Paulo - SP}</h1>
-                            <div>
-                                <button type="button" class="jsNumberFoundButton"><span>São Paulo - SP</span></button>
-                            </div>
+                            <div class="numberTextFound"></div>
+                            <div class="filterButtons"></div>
                         </div>
                     </div>
                     <div class="houseOfCards">

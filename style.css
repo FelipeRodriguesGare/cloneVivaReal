@@ -35,7 +35,7 @@ nav div {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding-right: 0.8%;
+    padding-right: 2.1%;
     box-sizing: border-box;
 }
 
@@ -138,12 +138,12 @@ nav div {
 }
 
 .findBlockContainer {
-    /* height: 429px; */
     height: fit-content;
     background: #fdd685;
     border: 1px solid #fdb10f;
     border-radius: 4px;
     padding: 16px;
+    margin-bottom: 24px;
 }
 
 .esquerda {
@@ -152,7 +152,6 @@ nav div {
 }
 
 .direita {
-    /* grid-area: direta; */
     width: 100%;
 }
 
@@ -189,9 +188,8 @@ nav div {
 .jsCitySearched {
     width: fit-content;
     cursor: pointer;
-    height: 28px;
-    margin-bottom: 8px;
-}    
+    margin-bottom: 16px;
+}
 
 .jsCitySearched label span{
     height: 20px;
@@ -311,16 +309,9 @@ input:checked + .slider:before {
     opacity: 25%;
 }
 
-#typeSelectionWhite{
-    font-weight: 400;
-    width: 254px;
-    margin-top: 10px;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
-    border-color: hsla(0,0%,100%,.001);
-    padding: 11px 12px;
-    font-size: 13px;
-    margin-bottom: 16px;
+.typeSelectionWhite{
+    opacity: 100% !important;
+    color: #0000008A;
 }
 
 #typeSelection:active {
@@ -353,14 +344,7 @@ input:checked + .slider:before {
     justify-content: space-between;
 }
 
-#precomin {
-    padding: 11px 12px 11px 32px;
-    width: 71px;
-    height: 18px;
-    text-align: end;
-}
-
-#precomax {
+.preco, .area {
     padding: 11px 12px 11px 32px;
     width: 71px;
     height: 18px;
@@ -374,12 +358,17 @@ input:checked + .slider:before {
 #precomax::-webkit-outer-spin-button,
 #precomax::-webkit-inner-spin-button,
 #precomin::-webkit-outer-spin-button,
-#precomin::-webkit-inner-spin-button  {
+#precomin::-webkit-inner-spin-button,
+#areaMin::-webkit-outer-spin-button,
+#areaMin::-webkit-inner-spin-button,
+#areaMax::-webkit-outer-spin-button,
+#areaMax::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.currencyType {
+.currencyType, .areaType {
+    z-index: 2;
     font-size: 13px;
     position: relative;
     top: -30px;
@@ -387,17 +376,20 @@ input:checked + .slider:before {
     color: #75758bc4;
 }
 
-.faixaPreco div {
-    width: 119px;
-}
-
 .faixaPreco div:first-child:after{
+    z-index: 1;
     color: rgba(0,0,0,.12);
-    content: "__";
+    content: "____";
     position: relative;
     bottom: 43%;
-    left: 84%;
+    left: 83%;
     width: 16px;
+    
+}
+
+.faixaPreco div {
+    width: 119px;
+    z-index: 10;
 }
 
 .roundButtonsContainer {
@@ -417,6 +409,7 @@ input:checked + .slider:before {
     padding: 0px 12px;
     background-color: white;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    margin-right: 2px;
 }
 
 .roundButton:hover {
@@ -611,6 +604,43 @@ input:checked + .slider:before {
     height: 16px;
 }
 
+.whiteBlockBorder {
+    border: 1px solid #ebebeb;
+    background-color: white;
+    box-shadow: none;
+}
+
+.whiteBlockContainer {
+    border: 1px solid rgb(0 0 0 / 12%);
+    box-shadow: none;
+}
+
+.spacer {
+    margin-bottom: 16px;
+}
+
+.areaType {
+    z-index: 2;
+    font-size: 13px;
+    position: relative;
+    top: -35px;
+    left: 90px;
+    color: #75758bc4;
+}
+
+.area {
+    box-shadow: none;
+    border: 1px solid rgb(0 0 0 / 12%);
+    padding: 13px 33px 13px 13px;
+    height: 20px;
+    margin: 2px ;
+    margin-top: 8px;
+}
+
+.area:focus {
+    padding: 12px 32px 12px 12px;
+}
+
 /* ===================================== JS CARDS ========================= */
 
 .houseOfCards article {
@@ -772,6 +802,24 @@ img {
     background-color: #EE6500 !important;
     opacity: 100;
     transition: opacity .2s ease-in-out;
+}
+
+.filterButtons {
+    display: flex;
+}
+
+.errorContainer {
+    font-weight: 900;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorMsg {
+    font-weight: 400;
+    color: red;
+    margin: 50px 0px;
 }
 
 @media screen and (max-width: 1170px) {
