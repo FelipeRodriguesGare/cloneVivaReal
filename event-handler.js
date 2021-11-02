@@ -12,7 +12,9 @@ export const clickHandlerMenu = (target, buttonsList, cssClass, type) => {
             buttonsList.forEach((item)=>{
                 item.classList.remove(`${cssClass}`)
                 if (item === evt.target) evt.target.classList.add(`${cssClass}`)
-                if (item === evt.target && type === 'round') addFilter(evt.target.value, buttonsList)
+                if (item === evt.target && type === 'round') {
+                    addFilter(evt.target.value, buttonsList)
+                }
             })
         }
     })
@@ -45,7 +47,7 @@ const removeElements = (arr) => arr.filter((value) => value.remove())
 const clearPage = () => {
     const houseOfCards = document.querySelectorAll('.houseOfCards')
     const numberTextFound = document.querySelectorAll('.numberTextFound')
-    const filterButtons = document.querySelectorAll('.filterButtons')
+    const filterButtons = document.querySelectorAll('.cityFilter')
     const aboveFindButton = document.querySelectorAll('.jsCitySearched')
     const sitePath = document.querySelectorAll('.sitePath')
     const selectionBox =  document.querySelector('#typeSelection')
@@ -91,12 +93,10 @@ export const clickClearMenuHandler = (target) => {
 }
 
 export const clickClearFilter = (target, buttonList) => {
-    console.log(buttonList)
     target.addEventListener('click', (evt)=> {
         buttonList.forEach((item)=>{
             item.classList.remove('roundButtonClicked')
         })
-        console.log(evt.target.parentElement.parentElement)
-        evt.target.parentElement.parentElement.remove()
+        if (evt.target.parentElement.parentElement.className != 'filterButtons') evt.target.parentElement.parentElement.remove()
     })
 }
