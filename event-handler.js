@@ -12,18 +12,28 @@ export const clickHandlerMenu = (target, buttonsList, cssClass, type) => {
             buttonsList.forEach((item)=>{
                 item.classList.remove(`${cssClass}`)
                 if (item === evt.target) evt.target.classList.add(`${cssClass}`)
-                if (item === evt.target && type === 'round') addFilter(evt.target.value)
+                if (item === evt.target && type === 'round') addFilter(evt.target.value, buttonsList)
             })
         }
     })
 }
 
-export const clickHandlerMenuFocus = (target, buttonsList) => {
+export const clickHandlerToggleButton = (target, buttonsList) => {
+    buttonsList.forEach((item)=>{
+        item.style.background = `url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/${item.parentElement.children[0].value}-black.svg)`
+    })
     target.addEventListener('click', (evt) => {
-        console.log(evt.target.value)
-
         buttonsList.forEach((item)=>{
-            if (item== evt.target) evt.target.focus()
+            item.style.background = `url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/${item.parentElement.children[0].value}-black.svg)`
+            item.parentElement.style.backgroundColor = 'white'
+            item.parentElement.classList.add('radioButtonLabel')
+        })
+        buttonsList.forEach((item)=>{
+            if (item == evt.target.parentElement.children[1]) {
+                item.style.background = `url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/${item.parentElement.children[0].value}-blue.svg)`
+                evt.target.parentElement.style.backgroundColor = '#1190cd14'
+                item.parentElement.classList.add('radioButtonLabel')
+            } 
         })
     })
 }
@@ -67,9 +77,7 @@ export const inputHandler = async (inputTarget) => {
             let cityObj = ibgeResponse(formatedCity)
             houseOfCards(cityObj)
         } catch {
-            console.log('brubru')
             errorDisplay()
-
         }
         evt.target.value = ''
     }    
@@ -82,9 +90,13 @@ export const clickClearMenuHandler = (target) => {
     })
 }
 
-export const clickClearFilter = (target) => {
+export const clickClearFilter = (target, buttonList) => {
+    console.log(buttonList)
     target.addEventListener('click', (evt)=> {
-
+        buttonList.forEach((item)=>{
+            item.classList.remove('roundButtonClicked')
+        })
+        console.log(evt.target.parentElement.parentElement)
         evt.target.parentElement.parentElement.remove()
     })
 }

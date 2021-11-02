@@ -1,10 +1,8 @@
-import {clickHandlerMenu, clickHandlerMenuFocus, inputHandler, clickClearMenuHandler} from './event-handler.js'
+import {clickHandlerMenu, inputHandler, clickClearMenuHandler, clickHandlerToggleButton} from './event-handler.js'
 import RequestIBGE from './IBGE-Request.js';
 
-const menuNavButtonsRadioContainer = document.querySelector('.radioMenuContainer')
-const menuNavButtonsRadio = document.querySelectorAll('.radioButtonsMenu')
 
-const menuNavBarDireta = document.querySelector('.menuTabsOutContainer')
+const menuNavBarDireta = document.querySelector('.menuTabs')
 const menuNavDireitaButtons = document.querySelectorAll('.mainRightMenuButtons')
 const roomFilter = document.querySelector('#roomsFilter')
 const roomFilterButtons = document.querySelectorAll('#roomsFilter button')
@@ -15,6 +13,12 @@ const bathFilterButtons = document.querySelectorAll('#bathFilter button')
 const cityInput = document.getElementById('locationSearch')
 const buttonBellowFind = document.querySelector('.jsCitySearched')
 
+
+const radioContainer = document.querySelector('.radioContainer')
+const radioLabel = document.querySelectorAll('.radioButtonLabel')
+
+clickHandlerToggleButton(radioContainer, radioLabel)
+
 clickHandlerMenu(menuNavBarDireta, menuNavDireitaButtons, 'mainRightMenuButtonsActive', 'menu')
 clickHandlerMenu(roomFilter, roomFilterButtons, 'roundButtonClicked', 'round')
 clickHandlerMenu(bathFilter, bathFilterButtons, 'roundButtonClicked', 'round')
@@ -22,9 +26,8 @@ clickHandlerMenu(parkingFilter, parkingFilterButtons, 'roundButtonClicked', 'rou
 
 clickClearMenuHandler(buttonBellowFind, roomFilterButtons ,'roundButtonClicked')
 
-// clickHandlerMenuFocus(menuNavButtonsRadioContainer, menuNavButtonsRadio)
-// ESSE RADIO BUTTON É B.O. PRA MAIS TARDE /\
-
 const ibge = new RequestIBGE()
 
 inputHandler(cityInput)
+
+

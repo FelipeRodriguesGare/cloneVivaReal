@@ -489,11 +489,25 @@ input:checked + .slider:before {
 }
 
 .radioButtonsMenu {
-     display: none;
+    display: none;
 }
 
-.visualizationToggle #radioListLabel {
-    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-list-black.svg);
+.sortContainer {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.sortContainer select {
+    font-size: 13px;
+    text-align:right;
+    color: black;
+    outline: 0;
+    appearance: none;
+    border: none;
+}
+
+.sortContainer label{
+    background: url(https://cdn1.vivareal.com/p/1-ba36604/v/static/app/svg/results/summary/sort-by/icon-filter-black.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     content: "";
@@ -502,17 +516,31 @@ input:checked + .slider:before {
     width: 24px;
 }
 
-.visualizationToggle:hover #radioListLabel {
-    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-list-blue.svg);
+.sortContainer label {
+    position: relative;
+    left: -6%;
+    top: 6px;
+}
+
+.sortContainer:hover select {
+    cursor: pointer;
+    color: #1190cd;
+}
+
+.sortContainer:hover label {
+    cursor: pointer;
+    background: url(https://cdn1.vivareal.com/p/1-ba36604/v/static/app/svg/results/summary/sort-by/icon-filter-blue.svg);
     background-position: 50%;
     background-repeat: no-repeat;
     content: "";
     height: 100%;
+    max-height: 24px;
     width: 24px;
 }
+/* 
+https://cdn1.vivareal.com/p/1-ba36604/v/static/app/svg/results/summary/sort-by/icon-filter-black.svg),url(https://cdn1.vivareal.com/p/1-ba36604/v/static/app/svg/results/summary/sort-by/icon-filter-blue.svg); */
 
-.visualizationToggle #radioWindows11Label{
-    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-2-black.svg);
+.visualizationToggle .radioButtonLabel {
     background-position: 50%;
     background-repeat: no-repeat;
     content: "";
@@ -521,8 +549,30 @@ input:checked + .slider:before {
     width: 24px;
 }
 
-.visualizationToggle:hover #radioWindows11Label{
-    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-2-blue.svg);
+.visualizationToggle:hover #radio1Label {
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-list-blue.svg) !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    height: 100%;
+    width: 24px;
+    cursor: pointer;
+}
+
+.visualizationToggle:hover #radio2Label {
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-2-blue.svg) !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    content: "";
+    max-height: 24px;
+    height: 100%;
+    width: 24px;
+    cursor: pointer;
+}
+
+.visualizationToggle:hover #radio3Label {
+    cursor: pointer;
+    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-blue.svg) !important;
     background-position: 50%;
     background-repeat: no-repeat;
     content: "";
@@ -531,18 +581,7 @@ input:checked + .slider:before {
     width: 24px;
 }
 
-.visualizationToggle #radioBlocksLabel{
-    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-black.svg);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    content: "";
-    max-height: 24px;
-    height: 100%;
-    width: 24px;
-}
-
-.visualizationToggle:hover #radioBlocksLabel, .visualizationToggle:focus #radioBlocksLabel{
-    background: url(https://cdn1.vivareal.com/p/1-9637c62/v/static/app/svg/results/summary/visualization-toggle/icon-grid-blue.svg);
+.visualizationToggle:hover .radioButtonLabel {
     background-position: 50%;
     background-repeat: no-repeat;
     content: "";

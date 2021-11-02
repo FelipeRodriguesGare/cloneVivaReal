@@ -141,21 +141,24 @@
                                 <li><button type="button" class="mainRightMenuButtons">IMÓVEIS NOVOS</button></li>
                             </ul>
                             <nav class="radioMenuContainer">
-                                <div>
-
+                                <div class="sortContainer">
+                                    <label for="sort"></label>
+                                    <select name="sort" id="sort">
+                                        <option value="">Ordenar por</option>
+                                    </select>
                                 </div>
-                                <div>
+                                <div class="radioContainer">
                                     <div class="visualizationToggle">
-                                        <input type="radio" name="dispositionMenu" id="radioList" class="radioButtonsMenu" value="1">
-                                        <label for="radioList" id="radioListLabel"></label>
+                                        <input type="radio" name="dispositionMenu" id="radio1" class="radioButtonsMenu" value="icon-list">
+                                        <label for="radio1" id="radio1Label" class="radioButtonLabel"></label>
                                     </div>
                                     <div class="visualizationToggle">
-                                        <input type="radio" name="dispositionMenu" id="radioWindows11" class="radioButtonsMenu" value="2">
-                                        <label for="radioWindows11" id="radioWindows11Label"></label>
+                                        <input type="radio" name="dispositionMenu" id="radio2" class="radioButtonsMenu" value="icon-grid-2">
+                                        <label for="radio2" id="radio2Label" class="radioButtonLabel"></label>
                                     </div>
                                     <div class="visualizationToggle">
-                                        <input type="radio" name="dispositionMenu" id="radioBlocks" class="radioButtonsMenu" value="3">
-                                        <label for="radioBlocks" id="radioBlocksLabel"></label>
+                                        <input type="radio" name="dispositionMenu" id="radio3" class="radioButtonsMenu" value="icon-grid">
+                                        <label for="radio3" id="radio3Label" class="radioButtonLabel"></label>
                                     </div>
                                 </div>
                             </nav>
