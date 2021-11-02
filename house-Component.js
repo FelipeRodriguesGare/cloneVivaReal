@@ -13,7 +13,7 @@ export const houseOfCards = async (obj) => {
 
         const cardPlacement = document.querySelector('.houseOfCards')
         const numberTextFound = document.querySelector('.numberTextFound')
-        const filterButtons = document.querySelector('.filterButtons')
+        const filterButtons = document.querySelector('.cityFilter')
         const filterButtonPlacement = document.querySelector('.jsCitySearched')
         const headerPathPlacement = document.querySelector('.sitePath')
         
